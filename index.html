@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="idex.css" rel=stylesheet type="text/css">
+        <link href="bootstrap-3.3.6-dist/css/bootstrap.css" rel=stylesheet type="text/css">
+    </head>
+<body>
+    <div class=container >
+        <div class="abc col-sm-8">
+            <div>
+            <div class="form-comtrol col-sm-5">
+            <label>Name</label>
+            </div>
+            <div class="form-comtrol col-sm-7">
+            <input class="form-control" type="text" placeholder="username">
+            </div>
+            </div>
+            <div>
+            <div class="form-comtrol col-sm-5">
+            <label>password</label>
+            </div>
+            <div class="form-comtrol col-sm-7">
+            <input class="form-control" type="password" placeholder="Password">
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-sm-4" >
+            <div><button class="form-control" id="login">login</button></div>
+            <div><button class="form-control" id="Register">Register</button></div>
+            <div><button class="form-control" id="forgot-password">forgot password</button></div>
+        </div>
+    </div>
+    <script src="jquery-3.0.0.js"></script>
+    <script type="text/javascript">
+    $('#login').on("click",function(){
+        $.ajax({
+            url: "login-partial.html",
+        }).done(function(response){
+            console.log(response);
+            $('.abc').html(response);
+        });
+    });
+    $('#Register').on("click",function(){
+        $.ajax({
+            url: "demoform.html",
+        }).done(function(response){
+            console.log(response);
+            $('.abc').html(response);
+        });
+    });
+    
+    </script>
+
+    
+</body>
+</html>
